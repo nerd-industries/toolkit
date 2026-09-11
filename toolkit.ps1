@@ -33,7 +33,7 @@ $Scripts = [ordered]@{
     '8'  = @{ Name = 'RustDesk — customer install';                   Url = 'https://rustdesk.nerdyneighbor.net' }
     '9'  = @{ Name = 'RustDesk — shop/tech install (perm password)'; Url = 'https://rustdesk-shop.nerdyneighbor.net' }
     '10' = @{ Name = 'RustDesk — uninstall';                           Url = 'https://rustdesk-uninstall.nerdyneighbor.net' }
-    '11' = @{ Name = 'Remote Access Audit';                            Url = 'https://audit.nerdyneighbor.net' }
+    '11' = @{ Name = 'Remote Access Audit — check for remote-access software'; Url = 'https://audit.nerdyneighbor.net' }
 }
 
 function Show-Menu {
