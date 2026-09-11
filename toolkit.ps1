@@ -59,7 +59,7 @@ if (-not [Console]::IsInputRedirected) {
             Write-Host '  Exiting.' -ForegroundColor DarkGray
             break
         }
-        if ($Scripts.ContainsKey($pick)) {
+        if ($Scripts.Contains($pick)) {
             $item = $Scripts[$pick]
             Write-Host ''
             Write-Host ('  >>> {0}' -f $item.Name) -ForegroundColor Green
