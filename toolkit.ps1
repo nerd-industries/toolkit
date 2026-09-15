@@ -34,6 +34,7 @@ $Scripts = [ordered]@{
     '9'  = @{ Name = 'RustDesk — shop/tech install (perm password)'; Url = 'https://rustdesk-shop.nerdyneighbor.net' }
     '10' = @{ Name = 'RustDesk — uninstall';                           Url = 'https://rustdesk-uninstall.nerdyneighbor.net' }
     '11' = @{ Name = 'Remote Access Audit — check for remote-access software'; Url = 'https://audit.nerdyneighbor.net' }
+    '12' = @{ Name = 'Clear PowerShell history';                      Cmd = 'Clear-History; Remove-Item (Get-PSReadLineOption).HistorySavePath -Force -ErrorAction SilentlyContinue' }
 }
 
 function Show-Menu {
@@ -63,9 +64,16 @@ if (-not [Console]::IsInputRedirected) {
             $item = $Scripts[$pick]
             Write-Host ''
             Write-Host ('  >>> {0}' -f $item.Name) -ForegroundColor Green
-            Write-Host ('  >>> irm {0} | iex' -f $item.Url) -ForegroundColor Green
-            Write-Host ''
-            irm $item.Url | iex
+            if ($item.Cmd) {
+                Write-Host ('  >>> {0}' -f $item.Cmd) -ForegroundColor Green
+                Write-Host ''
+                Invoke-Expression $item.Cmd
+            }
+            else {
+                Write-Host ('  >>> irm {0} | iex' -f $item.Url) -ForegroundColor Green
+                Write-Host ''
+                irm $item.Url | iex
+            }
             break
         }
         Write-Host ('  "{0}" is not a valid option.' -f $pick) -ForegroundColor Yellow
