@@ -33,8 +33,9 @@ $Scripts = [ordered]@{
     '8'  = @{ Name = 'RustDesk — customer install';                   Url = 'https://rustdesk.nerdyneighbor.net' }
     '9'  = @{ Name = 'RustDesk — shop/tech install (perm password)'; Url = 'https://rustdesk-shop.nerdyneighbor.net' }
     '10' = @{ Name = 'RustDesk — uninstall';                           Url = 'https://rustdesk-uninstall.nerdyneighbor.net' }
-    '11' = @{ Name = 'Remote Access Audit — check for remote-access software'; Url = 'https://audit.nerdyneighbor.net' }
-    '12' = @{ Name = 'Clear PowerShell history';                      Cmd = 'Clear-History; Remove-Item (Get-PSReadLineOption).HistorySavePath -Force -ErrorAction SilentlyContinue' }
+    '11' = @{ Name = 'RustDesk — convert shop to customer';             Url = 'https://rustdesk-convert.nerdyneighbor.net' }
+    '12' = @{ Name = 'Remote Access Audit — check for remote-access software'; Url = 'https://audit.nerdyneighbor.net' }
+    '13' = @{ Name = 'Clear PowerShell history';                      Cmd = 'Clear-History; Remove-Item (Get-PSReadLineOption).HistorySavePath -Force -ErrorAction SilentlyContinue' }
 }
 
 function Show-Menu {
